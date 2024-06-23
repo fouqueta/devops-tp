@@ -1,0 +1,12 @@
+- name: Launch frontend
+  docker_container:
+    name: tp-frontend-1
+    image: fouqueta/tp-frontend:latest
+    state: started
+    recreate: yes
+    ports:
+      - "8081:80"
+    networks:
+      - name: my-network
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
