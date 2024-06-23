@@ -1,0 +1,8 @@
+all:
+  vars:
+    ansible_user: centos
+    ansible_ssh_private_key_file: /home/aurelie/id_rsa
+  children:
+    prod:
+      hosts: aurfouquet.takima.cloud
+

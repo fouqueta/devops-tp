@@ -1,0 +1,17 @@
+- name: Launch database
+  docker_container:
+    name: tp-database-1
+    image: fouqueta/tp-database:latest
+    state: started
+    recreate: yes
+    volumes:
+      - /data
+    env:
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: db
+    networks:
+      - name: my-network
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+

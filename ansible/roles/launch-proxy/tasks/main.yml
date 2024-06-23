@@ -1,0 +1,14 @@
+- name: Launch proxy
+  docker_container:
+    name: tp-httpd-1
+    image: fouqueta/tp-httpd:latest
+    state: started
+    recreate: yes
+    ports:
+      # Publish container port 80 as host port 8080
+      - "8080:80"
+    networks:
+      - name: my-network
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+

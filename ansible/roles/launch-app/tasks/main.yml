@@ -1,0 +1,13 @@
+- name: Launch app
+  docker_container:
+    name: tp-backend-1
+    image: fouqueta/tp-backend:latest
+    state: started
+    recreate: yes
+    env:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tp-database-1:5432/db
+    networks:
+      - name: my-network
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+
