@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     backend:
-        build: ./backend/simple-api-student-main
+        build: ./backend
         networks:
           - my-network
         depends_on:
@@ -16,7 +16,7 @@ services:
           POSTGRES_PASSWORD: pwd
 
     httpd:
-        build: ./server
+        build: ./httpd
         ports:
           - "8080:80"
         networks:
